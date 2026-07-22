@@ -1,0 +1,205 @@
+{
+  "dashboard": {
+    "metrics": {
+      "totalRevenue": 45200,
+      "discountLoss": 3150,
+      "activeAgents": 128,
+      "failingAgents": 3
+    }
+  },
+  "users": [
+    {
+      "id": "USR-001",
+      "name": "Acme Corp",
+      "email": "admin@acmecorp.com",
+      "plan": "Enterprise",
+      "status": "active"
+    },
+    {
+      "id": "USR-002",
+      "name": "Stark Industries",
+      "email": "it@stark.com",
+      "plan": "Pro",
+      "status": "active"
+    },
+    {
+      "id": "USR-003",
+      "name": "Jane Doe",
+      "email": "jane.doe@freelance.com",
+      "plan": "Free",
+      "status": "inactive"
+    },
+    {
+      "id": "USR-004",
+      "name": "Globex Corporation",
+      "email": "systems@globex.com",
+      "plan": "Enterprise",
+      "status": "active"
+    },
+    {
+      "id": "USR-005",
+      "name": "John Smith",
+      "email": "jsmith@startup.io",
+      "plan": "Pro",
+      "status": "suspended"
+    }
+  ],
+  "skills": [
+    {
+      "id": "SKL-100",
+      "name": "Navegación Web",
+      "description": "Permite al agente buscar información en internet y raspar datos de sitios web públicos.",
+      "activeCount": 85,
+      "price": 50
+    },
+    {
+      "id": "SKL-101",
+      "name": "Lectura de Documentos",
+      "description": "Capacidad para procesar, extraer y resumir información de archivos PDF, DOCX y CSV.",
+      "activeCount": 112,
+      "price": 30
+    },
+    {
+      "id": "SKL-102",
+      "name": "Gestión de Calendarios",
+      "description": "Integración con Google Calendar y Outlook para agendar, modificar o cancelar reuniones.",
+      "activeCount": 42,
+      "price": 20
+    },
+    {
+      "id": "SKL-103",
+      "name": "Envío de Emails",
+      "description": "Redacción y envío de correos electrónicos automatizados mediante SMTP.",
+      "activeCount": 65,
+      "price": 25
+    }
+  ],
+  "agents": [
+    {
+      "id": "AGT-001",
+      "name": "DataScraper-3000",
+      "owner": "Acme Corp",
+      "status": "active",
+      "skills": ["Navegación Web", "Lectura de Documentos"],
+      "systemPrompt": "Eres un asistente de investigación. Tu objetivo es buscar noticias financieras recientes, extraer los datos relevantes y generar un reporte estructurado."
+    },
+    {
+      "id": "AGT-002",
+      "name": "AutoMailer-X",
+      "owner": "Stark Industries",
+      "status": "failing",
+      "skills": ["Envío de Emails", "Lectura de Documentos"],
+      "systemPrompt": "Eres un asistente de atención al cliente. Debes leer los tickets entrantes en formato CSV y responder automáticamente con resoluciones predefinidas."
+    },
+    {
+      "id": "AGT-003",
+      "name": "SupportBot-Alpha",
+      "owner": "Globex Corporation",
+      "status": "active",
+      "skills": ["Navegación Web"],
+      "systemPrompt": "Eres un agente de soporte técnico de nivel 1. Busca en la base de conocimientos pública para responder dudas de los usuarios."
+    },
+    {
+      "id": "AGT-004",
+      "name": "CalSync-Pro",
+      "owner": "Jane Doe",
+      "status": "inactive",
+      "skills": ["Gestión de Calendarios", "Envío de Emails"],
+      "systemPrompt": "Eres un asistente ejecutivo. Tu tarea es coordinar reuniones leyendo los correos electrónicos y encontrando huecos en el calendario de tu supervisor."
+    }
+  ],
+  "contracts": [
+    {
+      "id": "CON-901",
+      "client": "Acme Corp",
+      "agentName": "DataScraper-3000",
+      "skillsContracted": ["Navegación Web", "Lectura de Documentos"],
+      "startDate": "2026-06-01",
+      "endDate": "2026-12-31",
+      "totalPaid": 1250
+    },
+    {
+      "id": "CON-902",
+      "client": "Stark Industries",
+      "agentName": "AutoMailer-X",
+      "skillsContracted": ["Envío de Emails", "Lectura de Documentos"],
+      "startDate": "2026-07-15",
+      "endDate": "2027-07-15",
+      "totalPaid": 850
+    },
+    {
+      "id": "CON-903",
+      "client": "Globex Corporation",
+      "agentName": "SupportBot-Alpha",
+      "skillsContracted": ["Navegación Web"],
+      "startDate": "2026-01-10",
+      "endDate": "2026-07-10",
+      "totalPaid": 500
+    },
+    {
+      "id": "CON-904",
+      "client": "Jane Doe",
+      "agentName": "CalSync-Pro",
+      "skillsContracted": ["Gestión de Calendarios", "Envío de Emails"],
+      "startDate": "2026-05-01",
+      "endDate": "2026-06-01",
+      "totalPaid": 150
+    }
+  ],
+  "errorLogs": [
+    {
+      "id": "ERR-501",
+      "timestamp": "2026-07-21T08:14:00Z",
+      "agentName": "AutoMailer-X",
+      "errorType": "Authentication Error",
+      "severity": "high",
+      "description": "Failed to authenticate with SMTP server. Credentials rejected.",
+      "trace": "Error: SMTP Auth Failed\n  at NodeMailer.login (mailer.js:45)\n  at Agent.execute (agent.js:102)"
+    },
+    {
+      "id": "ERR-502",
+      "timestamp": "2026-07-21T09:30:22Z",
+      "agentName": "AutoMailer-X",
+      "errorType": "Timeout",
+      "severity": "medium",
+      "description": "Document parsing exceeded 30000ms limit.",
+      "trace": "TimeoutError: Operation timed out\n  at PDFParser.read (pdf-reader.js:88)"
+    },
+    {
+      "id": "ERR-503",
+      "timestamp": "2026-07-20T14:22:10Z",
+      "agentName": "DataScraper-3000",
+      "errorType": "Rate Limit",
+      "severity": "low",
+      "description": "API rate limit exceeded for target website.",
+      "trace": "HTTP 429 Too Many Requests\n  at WebScraper.fetch (scraper.js:21)"
+    },
+    {
+      "id": "ERR-504",
+      "timestamp": "2026-07-20T16:05:00Z",
+      "agentName": "SupportBot-Alpha",
+      "errorType": "Model Hallucination",
+      "severity": "high",
+      "description": "Agent generated a response containing invalid URLs.",
+      "trace": "ValidationException: URLs do not exist\n  at OutputValidator.check (validator.js:15)"
+    },
+    {
+      "id": "ERR-505",
+      "timestamp": "2026-07-19T11:10:00Z",
+      "agentName": "CalSync-Pro",
+      "errorType": "API Error",
+      "severity": "medium",
+      "description": "Google Calendar API returned 500 Internal Server Error.",
+      "trace": "GCalError: 500\n  at GCalService.createEvent (calendar.js:77)"
+    },
+    {
+      "id": "ERR-506",
+      "timestamp": "2026-07-18T09:00:15Z",
+      "agentName": "AutoMailer-X",
+      "errorType": "Authentication Error",
+      "severity": "high",
+      "description": "Failed to authenticate with SMTP server. Credentials rejected.",
+      "trace": "Error: SMTP Auth Failed\n  at NodeMailer.login (mailer.js:45)\n  at Agent.execute (agent.js:102)"
+    }
+  ]
+}

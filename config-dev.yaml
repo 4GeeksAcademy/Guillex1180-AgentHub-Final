@@ -1,0 +1,32 @@
+project:
+  name: "agenthub-admin-prototype"
+  type: "frontend-prototype"
+  description: "Prototipo estático del panel de administración de AgentHub"
+  repository_template: "https://github.com/4GeeksAcademy/html-hello"
+
+stack:
+  markup: "HTML5"
+  styling:
+    framework: "Tailwind CSS"
+    integration: "CDN"
+    allow_custom_css: false
+    allow_inline_styles: false
+  scripting:
+    language: "Vanilla JavaScript"
+    frameworks_allowed: false # Ni React, ni Vue, ni jQuery
+    build_tools_allowed: false # Sin Webpack, Vite, etc.
+
+features:
+  dark_mode:
+    enabled: true
+    strategy: "class-based (Tailwind dark: utilities)"
+  interactivity:
+    - "Dropdowns (click outside to close)"
+    - "Modals (backdrop click to close)"
+    - "Collapsible sections (smooth transitions)"
+
+environment:
+  data_source: "Hardcoded JSON/JS objects or static HTML"
+  target_devices:
+    - "Desktop"
+    - "Tablet"
